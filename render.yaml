@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: klipal
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: MAX_FILE_MB
+        value: "1024"
+      - key: MAX_CONCURRENT
+        value: "2"

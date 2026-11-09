@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Klipal | YouTube, TikTok, Instagram, Facebook ve X video indir</title>
+<meta name="description" content="YouTube, TikTok, Instagram, Facebook ve X videolarını filigransız ve istediğin kalitede MP4 ya da MP3 olarak indir. Ücretsiz, üyelik gerekmez.">
+<meta name="theme-color" content="#F3F5F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1220" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Klipal: video indir">
+<meta property="og:description" content="Linki yapıştır, videoyu filigransız indir. YouTube, TikTok, Instagram, Facebook ve X.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="static/icons/icon-512.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="static/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="static/icons/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="static/icons/apple-touch-icon.png">
+<link rel="preload" href="static/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="static/app.css?v=4">
+<script src="static/config.js?v=4"></script>
+<script src="static/theme.js?v=4"></script>
+</head>
+<body>
+<script>
+/* Dosya çift tıklanarak açıldıysa (file://) yol göster. Sunucudan açıldığında bu satır çalışmaz. */
+if (location.protocol === 'file:') {
+  document.documentElement.innerHTML = '<body style="font:17px/1.6 system-ui,sans-serif;max-width:560px;margin:56px auto;padding:0 20px;color:#0F1B2D"><h1 style="font-size:26px">Bu dosya doğrudan açılmaz</h1><p>Klipal bir sunucuyla çalışır. Klasördeki <b>baslat.bat</b> dosyasına çift tıklayın; site kendiliğinden <a href="http://localhost:8000">http://localhost:8000</a> adresinde açılır.</p></body>';
+}
+</script>
+
+<svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4l-1.1 1.1M14 10a4.5 4.5 0 0 0-6.4 0l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4l1.1-1.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5v5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wm" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 15.5h5M4 3l16 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3-8.7 8.7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8" cy="8" r="1.6" fill="currentColor"/><path d="M3 21L21 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-res" viewBox="0 0 24 24"><path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9.5 9v6M14.5 9v6M9.5 12h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 17.5V5.5l10-2v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="6.5" cy="17.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16.5" cy="15.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-stack" viewBox="0 0 24 24"><rect x="7" y="3.5" width="13" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7.5v10A2.5 2.5 0 0 0 6.5 20h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 7.5v5l4-2.5z" fill="currentColor"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <pattern id="tile" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M13 13h14v14H13z M20 10.1L29.9 20 20 29.9 10.1 20z" fill="none" stroke="currentColor" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="./" aria-label="Klipal ana sayfa">
+      <img class="brand__mark" src="static/icons/favicon.svg" width="30" height="30" alt="">
+      <span class="brand__word">Klipal</span>
+    </a>
+    <nav class="top__nav" aria-label="Sayfa içi">
+      <a href="#nasil">Nasıl indirilir</a>
+      <a href="#telefon">Telefonda</a>
+      <a href="#sss">Sorular</a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Koyu temaya geç">
+      <svg class="i-moon" width="20" height="20"><use href="#i-moon"/></svg>
+      <svg class="i-sun" width="20" height="20"><use href="#i-sun"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="ana">
+  <section class="hero wrap">
+    <div class="hero__tool">
+      <h1 class="hero__title">Videoyu al, filigranı bırak.</h1>
+      <p class="hero__lead">YouTube, TikTok, Instagram, Facebook ve X linkini yapıştır; videoyu istediğin kalitede MP4, sesini MP3 olarak indir. Ücretsiz, üyelik gerekmez.</p>
+
+      <form class="grab" id="form" novalidate>
+        <label class="sr" for="url">Video linki</label>
+        <div class="grab__field">
+          <svg class="grab__icon" width="22" height="22" aria-hidden="true"><use href="#i-link"/></svg>
+          <input id="url" name="url" type="url" inputmode="url" placeholder="Linki buraya yapıştır"
+                 autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
+          <button class="grab__clear" id="clearBtn" type="button" aria-label="Linki temizle" hidden>
+            <svg width="18" height="18"><use href="#i-x"/></svg>
+          </button>
+          <button class="grab__paste" id="pasteBtn" type="button">Yapıştır</button>
+        </div>
+        <button class="btn-go" id="goBtn" type="submit"><span class="btn-go__spin" aria-hidden="true"></span><span class="btn-go__text">Videoyu getir</span></button>
+      </form>
+
+      <ul class="plats" id="plats" aria-label="Desteklenen platformlar">
+        <li class="plats__lead">Çalışan linkler:</li>
+        <li data-p="youtube">YouTube</li>
+        <li data-p="tiktok">TikTok</li>
+        <li data-p="instagram">Instagram</li>
+        <li data-p="facebook">Facebook</li>
+        <li data-p="x">X (Twitter)</li>
+      </ul>
+
+      <p class="msg" id="msg" role="alert" hidden><svg width="20" height="20" aria-hidden="true"><use href="#i-alert"/></svg><span id="msgText"></span></p>
+
+      <section class="result" id="result" hidden aria-labelledby="rTitle">
+        <div class="result__head">
+          <div class="result__thumb" id="rThumbBox"><img id="rThumb" alt=""><span class="result__dur" id="rDur"></span></div>
+          <div>
+            <h2 class="result__title" id="rTitle">Video</h2>
+            <p class="result__by"><span class="chip" id="rPlat"></span><span id="rBy"></span></p>
+          </div>
+        </div>
+
+        <div class="items" id="itemsBox" hidden>
+          <p class="group__h" id="itemsLabel"></p>
+          <div class="items__row" id="items" role="group" aria-label="Gönderideki videolar"></div>
+        </div>
+
+        <p class="group__h">Video (MP4)</p>
+        <div class="qlist" id="qlist"></div>
+        <div id="audioBox">
+          <p class="group__h">Sadece ses (MP3)</p>
+          <div class="qlist" id="alist"></div>
+        </div>
+        <p class="result__err" id="rErr" role="alert" hidden></p>
+        <button class="link-btn" id="newBtn" type="button">Başka bir video indir</button>
+      </section>
+    </div>
+
+    <aside class="hero__frame" aria-hidden="true">
+      <div class="frame" id="frame" data-state="empty">
+        <svg class="frame__pattern" width="100%" height="100%"><rect width="100%" height="100%" fill="url(#tile)"/></svg>
+        <div class="frame__hint">
+          <svg width="26" height="26"><use href="#i-play"/></svg>
+          <span>Linki yapıştırınca videonun kapağı burada görünür.</span>
+        </div>
+        <img class="frame__img" id="fImg" alt="">
+        <span class="frame__plat" id="fPlat"></span>
+        <span class="frame__dur" id="fDur"></span>
+      </div>
+    </aside>
+  </section>
+
+  <section class="sec" id="nasil">
+    <div class="wrap">
+      <h2 class="sec__h">Nasıl indirilir?</h2>
+      <ol class="steps">
+        <li>
+          <span class="steps__n" aria-hidden="true">1</span>
+          <h3>Linki kopyala</h3>
+          <p>Uygulamada videonun altındaki Paylaş'a dokun ve “Linki kopyala”yı seç.</p>
+        </li>
+        <li>
+          <span class="steps__n" aria-hidden="true">2</span>
+          <h3>Buraya yapıştır</h3>
+          <p>Linki yukarıdaki kutuya yapıştır. Video kendiliğinden yüklenir.</p>
+        </li>
+        <li>
+          <span class="steps__n" aria-hidden="true">3</span>
+          <h3>Kaliteyi seç</h3>
+          <p>Her seçeneğin dosya boyutunu gör, birine dokun. Dosya cihazına iner.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="ozellikler">
+    <div class="wrap">
+      <h2 class="sec__h">İndirdiğin dosyada ne var, ne yok</h2>
+      <ul class="feats">
+        <li><svg width="28" height="28" aria-hidden="true"><use href="#i-wm"/></svg><h3>Filigran yok</h3><p>TikTok'un indirirken eklediği logo ve kullanıcı adı olmadan, platformdaki orijinal dosya.</p></li>
+        <li><svg width="28" height="28" aria-hidden="true"><use href="#i-tag"/></svg><h3>Etiket yok</h3><p>Başlık, açıklama ve etiket gibi gömülü bilgiler dosyadan silinir; dosya adında # ve @ kalmaz.</p></li>
+        <li><svg width="28" height="28" aria-hidden="true"><use href="#i-res"/></svg><h3>4K'ya kadar</h3><p>Kaynak hangi kalitedeyse o. Her seçeneğin boyutunu indirmeden önce görürsün.</p></li>
+        <li><svg width="28" height="28" aria-hidden="true"><use href="#i-note"/></svg><h3>Sadece ses</h3><p>Müziği ya da konuşmayı 320 kbps MP3 olarak al.</p></li>
+        <li><svg width="28" height="28" aria-hidden="true"><use href="#i-clock"/></svg><h3>Kayıt tutulmaz</h3><p>Dosyalar en geç 15 dakika sonra sunucudan silinir. Üyelik, çerez ve takip yok.</p></li>
+        <li><svg width="28" height="28" aria-hidden="true"><use href="#i-stack"/></svg><h3>Çoklu gönderiler</h3><p>Birden fazla video içeren Instagram ve X gönderilerinde istediğin videoyu seç.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec--panel" id="telefon">
+    <div class="wrap">
+      <div class="panel">
+        <h2 class="sec__h">Telefonda paylaş menüsünden indir</h2>
+        <p class="panel__lead">Linki kopyalamakla uğraşma: videoda Paylaş'a dokun, Klipal'ı seç. Video kendiliğinden açılır.</p>
+        <div class="panel__cols">
+          <div>
+            <h3>Android</h3>
+            <ol>
+              <li>Bu siteyi Chrome'da aç, menüden <b>Uygulamayı yükle</b>'ye (veya <b>Ana ekrana ekle</b>'ye) dokun.</li>
+              <li>TikTok, Instagram ya da YouTube'da videoda <b>Paylaş</b>'a dokun.</li>
+              <li>Listeden <b>Klipal</b>'ı seç.</li>
+            </ol>
+          </div>
+          <div>
+            <h3>iPhone</h3>
+            <ol>
+              <li><b>Kısayollar</b> uygulamasında yeni bir kısayol oluştur ve paylaş menüsünde gösterilmesini aç.</li>
+              <li><b>URL'leri Aç</b> (Open URLs) eylemini ekle. Adres olarak aşağıdakini yaz, sonuna <b>Kısayol Girdisi</b>'ni ekle.
+                <span class="copyline"><code id="scUrl">https://siteniz/?url=</code><button class="copy-btn" id="scCopy" type="button">Kopyala</button></span>
+              </li>
+              <li>Videoda <b>Paylaş</b>'a dokun, kısayolunu seç.</li>
+            </ol>
+          </div>
+        </div>
+        <p class="panel__note">Paylaş menüsü, site internette https adresiyle yayındayken çalışır.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="sss">
+    <div class="wrap">
+      <h2 class="sec__h">Sık sorulanlar</h2>
+      <div class="faq">
+        <details><summary>Ücretli mi?</summary><p>Hayır. Üyelik, giriş ya da uygulama kurulumu gerekmez.</p></details>
+        <details><summary>Hangi linkler çalışır?</summary><p>YouTube (Shorts dahil), TikTok, Instagram (Reels ve gönderiler), Facebook (video ve Reels) ve X gönderi linkleri. youtu.be, vm.tiktok.com ve fb.watch gibi kısa linkler de çalışır.</p></details>
+        <details><summary>Videolar gerçekten filigransız mı?</summary><p>TikTok'un indirme sırasında eklediği filigran olmadan, platformdaki orijinal dosya indirilir. Video sahibinin görüntünün içine kendisi eklediği yazı veya logo ise videonun parçasıdır, kaldırılamaz.</p></details>
+        <details><summary>“Etiketsiz” ne demek?</summary><p>Dosyanın içine gömülü başlık, açıklama, etiket ve bölüm bilgileri silinir. Görüntü ve ses yeniden kodlanmadığı için kalite düşmez. Dosya adındaki #etiket, @bahsetme ve emojiler de temizlenir.</p></details>
+        <details><summary>Hangi kalitede indirebilirim?</summary><p>Platform hangi çözünürlükleri sunuyorsa: çoğunlukla 360p ile 1080p arası, YouTube'da 4K'ya kadar. Her seçeneğin yanında yaklaşık dosya boyutu yazar. 1440p ve 4K videolar VP9 veya AV1 biçiminde gelir; eski oynatıcılarda açılmazsa VLC kullan.</p></details>
+        <details><summary>Gizli hesaplardaki videoları indirebilir miyim?</summary><p>Hayır. Yalnızca herkese açık gönderiler indirilebilir.</p></details>
+        <details><summary>Telefonda dosya nereye iner?</summary><p>Android'de İndirilenler klasörüne. iPhone'da Safari dosyayı Dosyalar uygulamasındaki İndirilenler'e kaydeder; videoyu açıp Paylaş &gt; Videoyu Kaydet ile Fotoğraflar'a ekleyebilirsin.</p></details>
+        <details><summary>Videolar sunucuda saklanıyor mu?</summary><p>Hayır. Dosya yalnızca sana gönderilmek için geçici olarak hazırlanır ve en geç 15 dakika içinde silinir.</p></details>
+        <details><summary>“Video alınamadı” hatası alıyorum.</summary><p>Linkin gönderinin kendisine ait olduğundan ve gönderinin herkese açık olduğundan emin ol. Platformlar zaman zaman değişiklik yapar; sorun sürerse birkaç dakika sonra tekrar dene.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <a class="brand brand--small" href="./"><img class="brand__mark" src="static/icons/favicon.svg" width="24" height="24" alt=""><span class="brand__word">Klipal</span></a>
+    <div class="foot__text">
+      <p>Yalnızca herkese açık içerikleri indirin. Başkalarına ait içerikleri izinsiz yayınlamak telif haklarını ihlal edebilir.</p>
+      <p>YouTube, TikTok, Instagram, Facebook ve X, sahiplerinin ticari markalarıdır. Klipal bu şirketlerle bağlantılı değildir.</p>
+      <p>© 2026 Klipal. Yapım: <b>selcukyus</b></p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="static/app.js?v=4"></script>
+</body>
+</html>

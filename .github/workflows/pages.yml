@@ -1,0 +1,46 @@
+name: Site (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Siteyi hazırla
+        env:
+          KLIPAL_API: ${{ vars.KLIPAL_API }}
+        run: |
+          mkdir -p _site
+          cp templates/index.html _site/index.html
+          cp -r static _site/static
+          cp static/manifest.webmanifest static/sw.js _site/
+          printf "window.KLIPAL_API = '%s';\n" "${KLIPAL_API}" > _site/static/config.js
+          touch _site/.nojekyll
+          echo "İndirme motoru adresi: '${KLIPAL_API:-(ayarlanmadı)}'"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

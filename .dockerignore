@@ -1,0 +1,7 @@
+.venv
+__pycache__
+*.pyc
+.git
+baslat.bat
+baslat.sh
+cookies.txt

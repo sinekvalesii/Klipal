@@ -1,0 +1,4 @@
+flask>=3.0
+waitress>=3.0
+imageio-ffmpeg>=0.5
+yt-dlp[default,deno,curl-cffi]>=2026.10.26
