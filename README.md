@@ -45,9 +45,9 @@ Motor kapalıyken site açılır ama indirme çalışmaz; ziyaretçiye bunu söy
 |---|---|---|
 | **Test** | Her push | Uygulamayı kurar ve testleri çalıştırır |
 | **Site (GitHub Pages)** | `main`'e her push | Arayüzü Pages'e yayınlar |
-| **İndirilebilir sürüm** | `v*` etiketi (örn. `v1.0.1`) | `Klipal-v1.0.1.zip` oluşturup Releases'e ekler |
+| **İndirilebilir sürüm** | `VERSION` dosyası değişince | `Klipal-vX.Y.Z.zip` oluşturup Releases'e ekler |
 
-Yeni sürüm çıkarmak için: `git tag v1.0.1 && git push origin v1.0.1`
+Yeni sürüm çıkarmak için `VERSION` dosyasındaki numarayı artır (örn. `1.0.1`) ve `main`'e gönder.
 
 ## Özellikler
 - 5 platform: YouTube (Shorts dahil), TikTok, Instagram (Reels, çoklu gönderi), Facebook (video, Reels, `fb.watch`), X

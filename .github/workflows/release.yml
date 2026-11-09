@@ -1,7 +1,10 @@
 name: İndirilebilir sürüm
 
+# Yeni sürüm: VERSION dosyasındaki numarayı artırıp main'e gönder (veya v* etiketi it).
 on:
   push:
+    branches: [main]
+    paths: [VERSION]
     tags: ['v*']
   workflow_dispatch:
 
@@ -13,23 +16,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Sürüm numarası
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then VER="$GITHUB_REF_NAME"; else VER="v$(tr -d '[:space:]' < VERSION)"; fi
+          echo "VER=$VER" >> "$GITHUB_ENV"
       - name: Zip paketini oluştur
         run: |
-          VER="${GITHUB_REF_NAME}"
-          [[ "$VER" == v* ]] || VER="dev"
           mkdir -p dist/Klipal
-          cp -r app.py requirements.txt baslat.bat baslat.sh Dockerfile render.yaml README.md static templates dist/Klipal/
+          cp -r app.py requirements.txt baslat.bat baslat.sh Dockerfile render.yaml README.md VERSION static templates dist/Klipal/
           (cd dist && zip -qr "Klipal-${VER}.zip" Klipal)
-          echo "VER=$VER" >> "$GITHUB_ENV"
       - name: Sürümü yayınla
-        if: startsWith(github.ref, 'refs/tags/v')
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$VER" "dist/Klipal-${VER}.zip" --title "Klipal $VER" \
-            --notes "Windows: zip'i çıkar, **baslat.bat** dosyasına çift tıkla. Site http://localhost:8000 adresinde açılır. Yapım: selcukyus" \
-            || gh release upload "$VER" "dist/Klipal-${VER}.zip" --clobber
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Klipal-${{ env.VER }}
-          path: dist/Klipal
+          NOTES="Windows: zip'i çıkar, baslat.bat dosyasına çift tıkla. Site http://localhost:8000 adresinde açılır. Yapım: selcukyus"
+          if gh release view "$VER" >/dev/null 2>&1; then
+            gh release upload "$VER" "dist/Klipal-${VER}.zip" --clobber
+          else
+            gh release create "$VER" "dist/Klipal-${VER}.zip" --target "$GITHUB_SHA" --title "Klipal $VER" --notes "$NOTES"
+          fi
